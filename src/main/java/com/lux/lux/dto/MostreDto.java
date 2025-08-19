@@ -1,7 +1,9 @@
 package com.lux.lux.dto;
 
-import java.time.LocalDate;
+import lombok.Data;
 
+import java.time.LocalDate;
+@Data
 public class MostreDto {
      private LocalDate data;
     private String luogo;
