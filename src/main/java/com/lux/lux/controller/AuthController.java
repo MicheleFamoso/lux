@@ -37,7 +37,7 @@ public class AuthController {
 
     }
 
-    @GetMapping("/auth/login")
+    @PostMapping("/auth/login")
     public String login(@RequestBody @Validated LoginDto loginDto, BindingResult bindingResult) throws ValidationException, NonTrovatoException {
         if (bindingResult.hasErrors()){
             throw new ValidationException(bindingResult.getAllErrors().stream()
