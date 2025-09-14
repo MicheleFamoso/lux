@@ -6,6 +6,7 @@ import com.lux.lux.exception.ValidationException;
 import com.lux.lux.model.Mostre;
 import com.lux.lux.repository.MostreRepository;
 import com.lux.lux.service.MostreService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
@@ -16,10 +17,10 @@ import java.util.List;
 
 @RestController
 public class MostreController {
-
+        @Autowired
     private MostreService mostreService;
 
-    @PostMapping("mostre")
+    @PostMapping("/mostre")
     @ResponseStatus(HttpStatus.CREATED)
     public Mostre saveMostra(@RequestBody @Validated MostreDto mostreDto, BindingResult bindingResult) throws ValidationException {
          if (bindingResult.hasErrors()){
@@ -34,7 +35,7 @@ public class MostreController {
     public List<Mostre> getMostre(){return mostreService.getMostre();}
 
 
-    @GetMapping("/moste/{id}")
+    @GetMapping("/mostre/{id}")
     public Mostre getMostra(@PathVariable int id) throws NonTrovatoException {
         return mostreService.getMostra(id);
     }
