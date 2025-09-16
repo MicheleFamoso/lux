@@ -40,7 +40,7 @@ public class MostreController {
         return mostreService.getMostra(id);
     }
 
-    @PutMapping
+    @PutMapping("/mostre/{id}")
     public Mostre updateMostre(@PathVariable int id,
                               @RequestBody @Validated MostreDto mostreDto,
                                BindingResult bindingResult) throws ValidationException, NonTrovatoException {
