@@ -55,7 +55,8 @@ public class SecurityConfing {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowedOrigins(List.of(
                 "http://localhost:5173",
-                "http://192.168.178.94:5173"
+                "http://192.168.178.94:5173",
+                "https://lucianofamoso.netlify.app"
         ));
         corsConfiguration.setAllowedMethods(List.of("*"));
         corsConfiguration.setAllowedHeaders(List.of("*"));
