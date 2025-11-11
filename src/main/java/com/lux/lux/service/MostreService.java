@@ -22,7 +22,7 @@ public class MostreService {
         mostre.setDescrizione(mostreDto.getDescrizione());
         return  mostreRepository.save(mostre);
     }
-    public List<Mostre> getMostre(){return mostreRepository.findAll();}
+    public List<Mostre> getMostre(){return mostreRepository.findAllByOrderByIdDesc();}
 
     public Mostre getMostra(int id) throws NonTrovatoException {
         return mostreRepository.findById(id).

@@ -29,7 +29,7 @@ public class PostService {
     }
 
     public List<Post> getAllPost(){
-        return postRepository.findAll();
+        return postRepository.findAllByOrderByIdDesc();
     }
 
     public Post getPost(int id) throws NonTrovatoException {
